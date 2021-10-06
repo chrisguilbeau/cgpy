@@ -1,6 +1,8 @@
 # cgpy
 things that I use a lot in python
 
+to install: `pip3 install git+https://github.com/chrisguilbeau/cgpy`
+
 **lets**
 
 *Lets allows you to create a scope to do some work and keep the result, or simply use it for side effects without littering your current scope's namespace*
@@ -16,11 +18,13 @@ z = 3
 
 @let
 def a():
-    x = 100
+    x = 100 # only changes x inside this scope
     y = 200
     z = 300
     return x + y + z
-    
+
+# at this point the scope from the above method is gone from memory
+# the result is stored in a variable with the name of the method
 print(x, y, z, a)
 # > 1 2 3 600
 
@@ -48,6 +52,7 @@ print(c())
 print(c(show_b=False))
 # > 'ac'
 
+# can be used as as a pipeline as well
 @letAs('<ol>{}</ol>'.format)
 @letAs(''.join)
 @mapAs('<li>{}</li>'.format)
