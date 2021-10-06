@@ -5,10 +5,10 @@ things that I use a lot in python
 
 *Lets allows you to create a scope to do some work and keep the result, or simply use it for side effects without littering your current scope's namespace*
 ```
-from lets import let
-from lets import letAs
-from lets import mapAs
-from lets import returnAs
+from cgpy.lets import let
+from cgpy.lets import letAs
+from cgpy.lets import mapAs
+from cgpy.lets import returnAs
 
 x = 1
 y = 2
