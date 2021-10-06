@@ -62,3 +62,18 @@ def d():
     yield 'c'
 ```
 
+** tags
+*Tags is a functional way to write html. Since some tag attributes are python keywords, you can either use ALL CAPS or leading or trailing underscores (they are ignored)*
+
+```
+t.span('Some text')
+# <span>Some text</span>
+
+t.ol(map(t.li, ('a', 'b', 'c'))
+# <ol><li>a</li><li>b</li><li>c</li></ol>
+
+t.div('Text', _class='a', style='font-weight: bold')
+# <div class="a" style="font-weight: bold">Text</div>
+```
+
+```
