@@ -62,7 +62,8 @@ def d():
     yield 'c'
 ```
 
-** tags
+**tags
+
 *Tags is a functional way to write html. Since some tag attributes are python keywords, you can either use ALL CAPS or leading or trailing underscores (they are ignored)*
 
 ```
