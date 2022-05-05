@@ -29,8 +29,6 @@ class TagMeta(object.__class__):
     def __getattribute__(self, attr):
         return (
             _tagContent if attr == '_' else
-            '<!DOCTYPE html>' + partial(_tag, attr)
-                if attr.lower() == 'html' else
             partial(_tag, attr)
             )
 
