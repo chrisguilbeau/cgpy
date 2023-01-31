@@ -13,7 +13,7 @@ def flatten(_list):
 
 def _tagAttrs(**kwargs):
     return " " + " ".join(
-        '{}="{}"'.format(k.strip('_'), k if v is True else k)
+        '{}="{}"'.format(k.strip('_'), k if v is True else v)
         for k, v in kwargs.items()
         if v not in (None, False)
         )
