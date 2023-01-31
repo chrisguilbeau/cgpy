@@ -11,8 +11,9 @@ def flatten(_list):
 
 def _tagAttrs(**kwargs):
     return " " + " ".join(
-        '{}="{}"'.format(k.strip('_'), v)
+        '{}="{}"'.format(k.strip('_'), k if v is True else k)
         for k, v in kwargs.items()
+        if v is not in (None, False)
         )
 
 def _tagContent(*args):
