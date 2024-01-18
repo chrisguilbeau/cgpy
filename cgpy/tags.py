@@ -11,12 +11,18 @@ def flatten(_list):
             yield item
 
 
+def getAttrText(_attr, value):
+    attr = _attr.strip('_')
+    if value is True:
+        result = attr
+    elif value in (False, None):
+        result = ""
+    else:
+        result = "{}='{}'".format(attr, value)
+    return result
+
 def _tagAttrs(**kwargs):
-    return " " + " ".join(
-        '{}="{}"'.format(k.strip('_'), k if v is True else v)
-        for k, v in kwargs.items()
-        if v not in (None, False)
-        )
+    return " " + " ".join(getAttrText(k, v) for k, v in kwargs.items())
 
 
 def _tagContent(*args):
