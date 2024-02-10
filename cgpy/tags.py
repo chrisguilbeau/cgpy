@@ -12,7 +12,7 @@ def flatten(_list):
 
 
 def getAttrText(_attr, value):
-    attr = _attr.strip('_')
+    attr = _attr.strip('_').replace('_', '-')
     if value is True:
         result = attr
     elif value in (False, None):
